@@ -1,0 +1,42 @@
+DATATHON 2026 — Portfolio update notes
+
+VERIFIED USER OWNERSHIP
+- Business EDA: conversion/channel analysis, inventory analysis, promotion/AOV analysis.
+- KPI construction, joins/aggregation, visualizations, interpretation, and recommendations.
+- Forecasting implementation was performed by a teammate.
+- User reviewed/interpreted team forecast output; do not present model implementation as user-owned.
+
+REPRODUCED METRICS
+- Promotion-order share: 38.37%
+- Non-promo net AOV: 27,565.36 VND
+- Promo net AOV: 18,894.78 VND
+- Net AOV decrease: 31.45%
+- Discount-rate vs quantity Pearson correlation: -0.0032
+- 2020–2022 average sell-through: 12.80%
+- 2020–2022 Outdoor overstock: 84.31%
+- 2013 overall conversion: 1.13%
+- 2022 overall conversion: 0.33%
+
+IMPORTANT REPRODUCTION FINDINGS
+1. The original EDA notebook is not top-to-bottom reproducible without restoring hidden interactive state:
+   several df_* aliases are used before being created; some variables used by the marketing section
+   (orders_detail and bounce_rate_web_traffic) are absent from the saved notebook.
+2. The original channel-AOV formula divides RPS by CR expressed as a percentage, producing AOV values
+   that are 100x too small. Correct channel AOV is revenue / orders.
+3. Source-level channel CR is not portfolio-safe because web_traffic has one row per date with one
+   traffic_source, while orders stores order_source per order. The denominator is therefore not cleanly aligned
+   by channel. The portfolio replacement uses overall time-aligned conversion instead.
+4. The promotion dashboard contains hard-coded summary DataFrames. The replacement charts are calculated
+   directly from raw data.
+5. The inventory dashboard mixes full-history and 2020–2022 metrics in its narrative. The replacement chart
+   uses one consistent 2020–2022 period.
+6. The final model notebook is reproducible after replacing the Kaggle path with repository-local paths.
+   Its saved validation WAPE is 0.342556. The report mentions lag/rolling features and SHAP, but the final
+   model.ipynb feature list does not contain lag/rolling features and contains no SHAP analysis.
+7. baseline.ipynb is not reproducible as a complete notebook: it contains duplicated experimental blocks,
+   undefined configuration variables, and an empty-test construction that cascades into downstream errors.
+
+8. The original inventory narrative says replenishment spikes were not tracking sales. Reproduction does not support that claim:
+   monthly units_received and units_sold in 2020–2022 are almost perfectly correlated (r=0.9999),
+   while receipts average 14.7% above sales. A safer interpretation is systematic over-replenishment,
+   not demand-disconnected batch ordering.

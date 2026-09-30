@@ -1,0 +1,11 @@
+metric,value
+Rows,8501.0
+Fields,24.0
+Metaphor rows,3182.0
+Non-metaphor rows,5319.0
+Positive rows with no metaphor span,50.0
+Sentences >80 words,37.0
+Low evaluation-score review flags,14.0
+Duplicate sentences,1.0
+Unique exact normalized metaphor spans,3724.0
+Exact span singleton share,0.9900644468313641

@@ -1,0 +1,13 @@
+metric,value,definition
+Orders,646945.0,Raw dataset
+Order items,714669.0,Raw dataset
+Inventory snapshots,60247.0,Raw dataset
+Promotion-order share,0.3837142260934083,"Order-level, any promo_id/promo_id_2"
+Promo net AOV,18894.78321827088,Order-level
+Non-promo net AOV,27565.356894129214,Order-level
+Net AOV decline on promoted orders,0.31454603360150823,Relative difference
+Discount-rate vs quantity correlation,-0.003173462426671166,Promoted line items
+2020-2022 average sell-through,0.1280391783142736,Inventory snapshots
+2020-2022 Outdoor overstock,0.8430775477060495,Inventory snapshots
+2013 overall conversion rate,1.129810024787046,Orders / sessions
+2022 overall conversion rate,0.3254258220924761,Orders / sessions

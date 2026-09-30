@@ -1,0 +1,47 @@
+{
+  "rows": 8501,
+  "fields": 24,
+  "metaphor_rows": 3182,
+  "non_metaphor_rows": 5319,
+  "metaphor_share": 0.37430890483472534,
+  "splits": {
+    "train": 5950,
+    "test": 1701,
+    "dev": 850
+  },
+  "split_metaphor_share_pct": {
+    "train": 37.42857142857143,
+    "dev": 37.411764705882355,
+    "test": 37.4485596707819
+  },
+  "metaphor_rate_by_length_pct": {
+    "0–30": 19.412607449856733,
+    "31–60": 35.25329632199861,
+    "61–100": 39.7323295692179,
+    "101–200": 49.22118380062305,
+    ">200": 68.28193832599119
+  },
+  "metaphor_type_assignments": {
+    "emotional": 1730,
+    "ontological": 1558,
+    "structural": 932,
+    "cultural_folklore": 381,
+    "orientational": 288,
+    "other": 23
+  },
+  "qa_flags": {
+    "Metaphor + no span": 50,
+    ">80 words": 37,
+    "Low evaluation score": 14,
+    "Duplicate sentence": 1
+  },
+  "positive_missing_interpretation": 28,
+  "positive_missing_scores": 28,
+  "positive_no_types": 17,
+  "positive_no_phrases": 50,
+  "unique_exact_metaphor_spans": 3724,
+  "exact_span_singletons": 3687,
+  "exact_span_singleton_share": 0.9900644468313641,
+  "max_exact_span_frequency": 3,
+  "duplicate_sentences": 1
+}
